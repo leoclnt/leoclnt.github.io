@@ -24,6 +24,9 @@
     // Mobile Navigation
     if ($('#nav-menu-container').length) {
         var $mobile_nav = $('#nav-menu-container').clone().prop({id: 'mobile-nav'});
+        $mobile_nav.find('> ul').append(
+    '<li class="mobile-linkedin"><a href="https://www.linkedin.com/in/leo-collinet-395777365/" target="_blank"><i class="fa fa-linkedin"></i> LinkedIn</a></li>'
+);
         $mobile_nav.find('> ul').attr({'class': '', 'id': ''});
         $('body').append($mobile_nav);
      $('.header .container-fluid').append('<button type="button" id="mobile-nav-toggle"><i class="fa fa-bars"></i></button>');
