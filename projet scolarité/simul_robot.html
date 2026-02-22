@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Simulation Robot</title>
+<link href="../css/style.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="project-page">
+
+<section class="project-details">
+
+    <h1>Simulation Robotique</h1>
+    <p>Cycle robot programmé sous RobotGuide.</p>
+
+    <div class="video-container">
+
+        <button id="startBtn" class="start-btn">
+            <i class="fa-solid fa-play"></i> START CYCLE
+        </button>
+
+        <video id="robotVideo" controls>
+            <source src="../vidéo/vidéo_cycle_tp.mp4" type="video/mp4">
+        </video>
+
+        <p class="video-description">
+    Simulation réalisée sous RobotGuide.
+    Programmation d'un cycle de prise et dépose avec gestion des trajectoires articulaires
+    et optimisation des déplacements.
+</p>
+
+
+    </div>
+
+</section>
+
+<script>
+const btn = document.getElementById("startBtn");
+const video = document.getElementById("robotVideo");
+
+btn.addEventListener("click", () => {
+    video.play();
+});
+</script>
+
+</body>
+</html>
+
+

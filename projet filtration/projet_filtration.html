@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Projet API - Détails</title>
+<link href="../css/style_v2.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+
+<body class="project-page">
+
+<div id="tsparticles"></div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  tsParticles.load("tsparticles", {
+    fullScreen: {
+      enable: false
+    },
+    background: {
+      color: "transparent"
+    },
+    particles: {
+      number: { value: 80 },
+      color: { value: "#00d4ff" },
+      links: {
+        enable: true,
+        distance: 150,
+        color: "#00d4ff",
+        opacity: 0.4,
+        width: 1
+      },
+      move: {
+        enable: true,
+        speed: 2
+      },
+      size: {
+        value: 3
+      }
+    }
+  });
+});
+</script>
+
+
+<section class="project-details">
+
+    <h1>Projet Programmation API</h1>
+    <p>Projet BTS Filtration du lubrifiant de coupe recyclé</p>
+
+    <div class="project-links">
+
+        <a href="../pdf/programme_api_filtration.pdf" target="_blank" class="card-link">
+            <i class="fa-solid fa-file-pdf"></i>
+            <span>Programme API</span>
+        </a>
+
+        <a href="../pdf/plan_électrique-filtration.pdf" target="_blank" class="card-link">
+            <i class="fa-solid fa-bolt"></i>
+            <span>Schéma Électrique</span>
+        </a>
+
+        <a href="../pdf/rapport_filtration.pdf" target="_blank" class="card-link">
+            <i class="fa-solid fa-book"></i>
+            <span>Rapport Projet</span>
+        </a>
+
+    </div>
+
+</section>
+
+</body>
+</html>
