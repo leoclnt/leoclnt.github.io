@@ -608,7 +608,7 @@ body.mobile-nav-active #mobile-nav-toggle {
     height: auto;
     display: block;
     margin: 35px auto 0 auto;
-    margin-top: 80px;
+    margin-top: 0px;
 }
 
 .about .col-md-6.col-lg-4 {
