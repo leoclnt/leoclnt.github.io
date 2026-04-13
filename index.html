@@ -474,3 +474,12 @@ Fort d'une expérience dans l'industrie, déjà marquée par 4 années d'alterna
         <script src="js/main.js"></script>
     </body>
 </html>
+<script>
+window.addEventListener('load', function () {
+    setTimeout(function () {
+        window.scrollTo(0, 1);
+        window.scrollTo(0, 0);
+        window.dispatchEvent(new Event('resize'));
+    }, 100);
+});
+</script>
