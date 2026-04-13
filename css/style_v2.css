@@ -985,17 +985,25 @@ height: 8px;
 
 .portfolio .portfolio-item {
     position: relative;
-    height: 250px;
-    overflow: hidden;
+    height: auto;
+    overflow: visible;
+    margin-bottom: 30px;
 }
 
 .portfolio .portfolio-item figure {
-    background: #243B6B;
-    overflow: hidden;
-    height: 220px;
     position: relative;
+    margin: 0;
+    overflow: hidden;
+    height: auto;
+    background: transparent;
     border-radius: 0;
-    margin: 0; 
+}
+
+.portfolio .portfolio-item img,
+.portfolio .portfolio-item figure img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 .portfolio .portfolio-item figure:hover img {
