@@ -1528,3 +1528,56 @@ height: 8px;
 html, body {
     overflow-x: hidden;
 }
+
+
+/* Correction affichage mobile portfolio/contact */
+.portfolio .portfolio-item img,
+.portfolio .portfolio-item figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.contact {
+    position: relative;
+    z-index: 2;
+    clear: both;
+    background: #E4E9F2;
+}
+
+.footer {
+    position: relative;
+    z-index: 2;
+    clear: both;
+}
+
+@media (max-width: 768px) {
+    .portfolio {
+        padding: 60px 0 20px 0;
+    }
+
+    .portfolio .portfolio-item {
+        height: auto !important;
+        overflow: visible;
+        margin-bottom: 20px;
+    }
+
+    .portfolio .portfolio-item figure {
+        height: auto !important;
+        overflow: hidden;
+    }
+
+    .portfolio .portfolio-item figure::after {
+        display: none;
+    }
+
+    .portfolio .portfolio-item figure .link-preview,
+    .portfolio .portfolio-item figure .link-details,
+    .portfolio .portfolio-item figure .portfolio-title {
+        display: none !important;
+    }
+
+    .contact {
+        padding-top: 40px;
+    }
+}
