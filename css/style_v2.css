@@ -1379,7 +1379,7 @@ height: 8px;
     align-items: center;
     justify-content: center;
     text-align: center;
-    min-height: 230px;   /* hauteur identique */
+    min-height: 230px;
 }
 
 .card-link i {
@@ -1463,30 +1463,94 @@ height: 8px;
 }
 }
 
-@media (max-width: 768px) {
+html, body {
+    overflow-x: hidden;
+}
 
-    .portfolio .container {
-        max-width: 100%;
+
+/* Correction affichage mobile portfolio/contact */
+.portfolio .portfolio-item img,
+.portfolio .portfolio-item figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.contact {
+    position: relative;
+    z-index: 2;
+    clear: both;
+    background: #E4E9F2;
+}
+
+.footer {
+    position: relative;
+    z-index: 2;
+    clear: both;
+}
+
+/* ============================= */
+/* --- FIX MOBILE PORTFOLIO ---- */
+/* ============================= */
+
+@media (max-width: 768px) {
+    /* Filtres en flex wrap au lieu de inline-block avec marges négatives */
+    .portfolio #portfolio-flters {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+        margin: 0 0 25px 0;
+        padding: 0 10px;
+    }
+
+    .portfolio #portfolio-flters li {
+        margin: 0;
+        flex: 0 0 auto;
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+
+    /* Portfolio items en colonne */
+    .portfolio {
+        padding: 60px 0 20px 0;
+    }
+
+    .portfolio .container,
+    .portfolio .container-fluid {
         padding-left: 15px;
         padding-right: 15px;
     }
 
     .portfolio .portfolio-item {
-        height: auto;
+        height: auto !important;
+        overflow: visible;
+        margin-bottom: 20px;
     }
 
     .portfolio .portfolio-item figure {
-        height: auto;
+        height: auto !important;
+        overflow: hidden;
     }
 
-}
+    .portfolio .portfolio-item figure::after {
+        display: none;
+    }
 
+    .portfolio .portfolio-item figure .link-preview,
+    .portfolio .portfolio-item figure .link-details,
+    .portfolio .portfolio-item figure .portfolio-title {
+        display: none !important;
+    }
+
+    .contact {
+        padding-top: 40px;
+    }
+}
 
 /* ==================================== */
 /* -------- Vidéo simul robot  ------- */
 /* ================================== */
-
-
 
 .video-container {
     text-align: center;
@@ -1531,61 +1595,4 @@ height: 8px;
 
 .start-btn:active {
     transform: scale(0.95);
-}
-
-html, body {
-    overflow-x: hidden;
-}
-
-
-/* Correction affichage mobile portfolio/contact */
-.portfolio .portfolio-item img,
-.portfolio .portfolio-item figure img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.contact {
-    position: relative;
-    z-index: 2;
-    clear: both;
-    background: #E4E9F2;
-}
-
-.footer {
-    position: relative;
-    z-index: 2;
-    clear: both;
-}
-
-@media (max-width: 768px) {
-    .portfolio {
-        padding: 60px 0 20px 0;
-    }
-
-    .portfolio .portfolio-item {
-        height: auto !important;
-        overflow: visible;
-        margin-bottom: 20px;
-    }
-
-    .portfolio .portfolio-item figure {
-        height: auto !important;
-        overflow: hidden;
-    }
-
-    .portfolio .portfolio-item figure::after {
-        display: none;
-    }
-
-    .portfolio .portfolio-item figure .link-preview,
-    .portfolio .portfolio-item figure .link-details,
-    .portfolio .portfolio-item figure .portfolio-title {
-        display: none !important;
-    }
-
-    .contact {
-        padding-top: 40px;
-    }
 }
