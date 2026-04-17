@@ -107,17 +107,23 @@
     });
 
 
-    // Porfolio isotope and filter
-    var portfolioIsotope = $('.portfolio-container').isotope({
-        itemSelector: '.portfolio-item',
-        layoutMode: 'fitRows'
-    });
+    // Portfolio isotope and filter
+    // On attend que toutes les images soient chargées avant d'initialiser Isotope
+    // Sans ça, Isotope calcule les positions avant de connaître la taille des images
+    // et tout se superpose au premier chargement (surtout sur mobile)
+    var $portfolioContainer = $('.portfolio-container');
 
-    $('#portfolio-flters li').on('click', function () {
-        $("#portfolio-flters li").removeClass('filter-active');
-        $(this).addClass('filter-active');
+    $portfolioContainer.imagesLoaded(function () {
+        var portfolioIsotope = $portfolioContainer.isotope({
+            itemSelector: '.portfolio-item',
+            layoutMode: 'fitRows'
+        });
 
-        portfolioIsotope.isotope({filter: $(this).data('filter')});
+        $('#portfolio-flters li').on('click', function () {
+            $("#portfolio-flters li").removeClass('filter-active');
+            $(this).addClass('filter-active');
+            portfolioIsotope.isotope({ filter: $(this).data('filter') });
+        });
     });
 
 
@@ -130,4 +136,3 @@
     });
 
 })(jQuery);
-
