@@ -1464,7 +1464,7 @@ height: 8px;
 }
 
 html, body {
-    overflow-x: hidden;
+    overflow-x: clip;
 }
 
 
@@ -1493,8 +1493,8 @@ html, body {
 /* --- FIX MOBILE PORTFOLIO ---- */
 /* ============================= */
 
-@media (max-width: 768px) {
-    /* Filtres en flex wrap au lieu de inline-block avec marges négatives */
+@media (max-width: 1024px) {
+
     .portfolio #portfolio-flters {
         display: flex;
         flex-wrap: wrap;
@@ -1511,15 +1511,8 @@ html, body {
         padding: 8px 12px;
     }
 
-    /* Portfolio items en colonne */
     .portfolio {
         padding: 60px 0 20px 0;
-    }
-
-    .portfolio .container,
-    .portfolio .container-fluid {
-        padding-left: 15px;
-        padding-right: 15px;
     }
 
     .portfolio .portfolio-item {
@@ -1533,14 +1526,38 @@ html, body {
         overflow: hidden;
     }
 
+    /* overlay sombre caché par défaut sur mobile */
     .portfolio .portfolio-item figure::after {
-        display: none;
+        opacity: 0;
+        transition: opacity 0.3s;
     }
 
-    .portfolio .portfolio-item figure .link-preview,
-    .portfolio .portfolio-item figure .link-details,
-    .portfolio .portfolio-item figure .portfolio-title {
-        display: none !important;
+    /* tap active la classe touch-active via JS */
+    .portfolio .portfolio-item figure.touch-active img {
+        opacity: 0.3;
+        transition: 0.3s;
+    }
+
+    .portfolio .portfolio-item figure.touch-active::after {
+        opacity: 1;
+    }
+
+    .portfolio .portfolio-item figure.touch-active .link-preview {
+        opacity: 1 !important;
+        display: inline-block !important;
+        left: calc(50% - 77px);
+    }
+
+    .portfolio .portfolio-item figure.touch-active .link-details {
+        opacity: 1 !important;
+        display: inline-block !important;
+        right: calc(50% - 77px);
+    }
+
+    .portfolio .portfolio-item figure.touch-active .portfolio-title {
+        opacity: 1 !important;
+        display: inline-block !important;
+        top: 50%;
     }
 
     .contact {
